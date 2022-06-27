@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-# from .views import LikeView
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -12,10 +11,7 @@ urlpatterns = [
     path('update/<int:pk>', views.UpdateView.as_view(), name='update'),
     path('delete/<int:pk>', views.DeleteView.as_view(), name='delete'),
     path('latest/', views.TodayView.as_view(), name='todayDate'),
-
-    # path('post/<int:pk>/post-detail', PostDetailView.as_view(), name='post-detail'),
     path('register', views.register_request, name="register"),
     path('login/', views.login_request, name="login"),
     path('logout/', views.logout_request, name="logout"),
-    # path('like/<int:pk>', LikeView, name='like_post'),
 ]
