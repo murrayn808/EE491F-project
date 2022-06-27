@@ -1,0 +1,15 @@
+{% extends 'blogs/base.html' %}
+
+<h2> Hello {{user.username}}!</h2>
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <time class="date">
+                {{ post.published_date }}
+            </time>
+            <h2><a href="{% url 'post_edit' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p style="color: lightblue;">Author: {{ post.author }}</p>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}

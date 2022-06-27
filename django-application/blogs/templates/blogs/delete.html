@@ -1,0 +1,7 @@
+<a href="{% url 'post_list' %}">HOME</a>
+<form method="post">{% csrf_token %}
+    <h3 style="color: red;">Are you sure you want to delete the post "{{ object.text }}"?</h3>
+    <input type="submit" value="Confirm">
+    <br>
+    <h4><a href="{% url 'post_list' %}">No, I do not want to delete the post</a></h4>
+</form>
