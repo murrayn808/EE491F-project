@@ -22,7 +22,7 @@
 
                     </a>
                 {% endif %}
-                <h1><a href="/">Welcome to 808BANGAZ Forum Search Page! </a></h1>
+                <h1 class='greeting3'>Welcome to 808BANGAZ Forum Search Page!</h1>
             </div>
         </header>
     <center>   
@@ -37,29 +37,31 @@
 {% if blogs_list %}
         <center>
             <ul>
-            <h2> Hello {{user.username}}!</h2>
-            <h3>What would you like to search for?</h3>
+            <h2 class='user'> Hello {{user.username}}!</h2>
+            <h3 class='user'>What would you like to search for?</h3>
             <br>
             <form method="GET"> {% csrf_token %}
                 {{ filter.form }}
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
+            <hr>
         </center>
 
         {% for blog in filter.qs %}
         <center>
-            <li>
-                <h4>{{ blog.title }}<br></h4>
+            
+                <h4 class='title'>{{ blog.title }}<br></h4>
                 Text: {{ blog.text }} <br>
-                Written by: {{ blog.author }} <br>
+                <i>Written by: {{ blog.author }}</i> <br>
                 Published on: {{ blog.published_date }} <br>
                 
                 <span><a href="{% url 'update' blog.id %}">edit</a></span>         
                 <span><a href="{% url 'delete' blog.id %}">delete</a></span>
-            </li> 
+             
             <br>
             <br>
         </center>
+        <hr>
         {% endfor %}
         </ul>
 

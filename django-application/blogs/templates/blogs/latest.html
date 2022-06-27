@@ -22,7 +22,7 @@
 
                     </a>
                 {% endif %}
-                <h1><a href="/">Welcome to 808BANGAZ Forum Ordering<br> (Oldest to Newest) Page! </a></h1>
+                <h1 class='greeting3'>Welcome to 808BANGAZ Forum Ordering<br> (Oldest to Newest) Page!</h1>
             </div>
         </header>
     </body>
@@ -32,16 +32,18 @@
 
 {% if blogs_list %}
     <center>
-        <center><h2> Hello {{user.username}}!</h2></center>
+        <center><h2 class='user'> Hello {{user.username}}!</h2></center>
+        <hr>
         {% for blog in blogs_list %}
-            <li>
-                <h4>{{ blog.title }}<br></h4>
+            
+                <h4 class='title'>{{ blog.title }}</h4><br>
                 Text: {{ blog.text }} <br>
-                Written by: {{ blog.author }} <br>
+                <i>Written by: {{ blog.author }}</i> <br>
                 Published on: {{ blog.published_date }} <br>
                 <span><a href="{% url 'update' blog.id %}">edit</a></span>
                 <span><a href="{% url 'delete' blog.id %}">delete</a></span>
-            </li>
+                <hr>
+            
         {% endfor %}
         </ul>
     </center>   

@@ -23,28 +23,24 @@
                         </svg>
                     </a>
             </div>
-                <h1><a href="/blogs">Welcome to 808BANGAZ Forum Page! </a></h1>
-                <h2 style="color: lightpink"> Hello {{ user.username }}! <br></h2>
+                <h1 class="greeting3">Welcome to 808BANGAZ Forum Page!</h1> 
+                <h2 class='user'> Hello {{ user.username }}! <br></h2>
                 <center><a href="{% url 'logout' %}">Click here to logout</a> </center>
                     {% else %}
-                    <h1><a href="/blogs">Please create an account or login to make a forum post! </a></h1>
-                    <a href="{% url 'register' %}">Click here to create a username</a>
-                    <br>
-                    <a href="{% url 'login' %}">Click here to login</a>
+                        <h1 class='greeting2'>Please create an account or login to make a forum post!</h1>
+                        <a href="{% url 'register' %}">Click here to create a username</a>
+                        <br>
+                        <a href="{% url 'login' %}">Click here to login</a>
                     
                 {% endif %}
-                
-                {% comment %} <h1><a href="/blogs">Please create an account or login to make a forum post! </a></h1>
-                <a href="{% url 'register' %}">Click here to create a username</a>
-                <br>
-                <a href="{% url 'login' %}">Click here to login</a> {% endcomment %}
         </header>
         <ul>
-            <center>
+            <center> 
             <a href="{% url 'post_list' %}">Home</a> <br> 
             <a href="{% url 'ordering' %}">Ordering Forums From Newest to Oldest</a> <br>
             <a href="{% url 'todayDate' %}">Ordering Forums From Oldest to Newest</a><br>
             <a href="{% url 'search' %}">Search</a> <br>
+            <hr>
 
             
             </center>
