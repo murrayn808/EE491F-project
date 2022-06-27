@@ -15,7 +15,6 @@
         <header class="page-header" style="color: lightblue">
             <div class="container">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">Click here to logout</a>
                     <a href="{% url 'post_new' %}" class="top-menu">
                         <p class = "click-image"> click image to add new post </p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
@@ -26,10 +25,19 @@
             </div>
                 <h1><a href="/blogs">Welcome to 808BANGAZ Forum Page! </a></h1>
                 <h2 style="color: lightpink"> Hello {{ user.username }}! <br></h2>
+                <center><a href="{% url 'logout' %}">Click here to logout</a> </center>
+                    {% else %}
+                    <h1><a href="/blogs">Please create an account or login to make a forum post! </a></h1>
+                    <a href="{% url 'register' %}">Click here to create a username</a>
+                    <br>
+                    <a href="{% url 'login' %}">Click here to login</a>
+                    
                 {% endif %}
+                
+                {% comment %} <h1><a href="/blogs">Please create an account or login to make a forum post! </a></h1>
                 <a href="{% url 'register' %}">Click here to create a username</a>
                 <br>
-                <a href="{% url 'login' %}">Click here to login</a>
+                <a href="{% url 'login' %}">Click here to login</a> {% endcomment %}
         </header>
         <ul>
             <center>
