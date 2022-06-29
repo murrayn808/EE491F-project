@@ -35,12 +35,12 @@
                 <a class="nav-link" href=" {% url 'login' %}"> Login </a>
             </li>
             {% endif %}
-            <li class = "nav-item">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"> Ordering </button>
-                <div class = "dropdown-menu" style = "right: auto; left: auto;" >
-                    <a class = "dropdown-item" href = " {% url 'ordering' %}"> Newest to Oldest</a>
-                    <a class = "dropdown-item" href = " {% url 'todayDate' %}"> Oldest to Newest</a>
-                </div>
+            <li class = "nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ordering</a>
+                    <ul class="dropdown-menu">
+                        <li><a class = "dropdown-item" href = " {% url 'ordering' %}"> Newest to Oldest</a></li>
+                        <li><a class = "dropdown-item" href = " {% url 'todayDate' %}"> Oldest to Newest</a></li>
+                    </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" text-align: "right"; href="{% url 'search' %}">Search</a>
